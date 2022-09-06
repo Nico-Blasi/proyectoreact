@@ -1,4 +1,4 @@
-import { Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink } from "../NavBar.elements"
+import { Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink } from "./NavBar.elements"
 import {FaReact} from "react-icons/fa";
 
 const NavBar = () => {
