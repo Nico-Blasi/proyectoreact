@@ -55,3 +55,11 @@ export const MenuItemLink = styled.a`
          transition: 0.5s all ease;
     }
 `;
+
+export const IconCar = styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    color: #fff;
+`;
