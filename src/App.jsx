@@ -8,12 +8,14 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 const App = () => {
   return (
+    <>
+    <NavBar />
     <ChakraProvider>
-      <NavBar />
       <ItemListContainer greeting="Bienvenido a mi intento de eComerce! :)" />
-      <ItemCount initial={1} stock={9} onAdd={() => {}} />
+      <ItemCount initial={1} stock={10} onAdd={() => {}} />
       <Item />
     </ChakraProvider>
+    </>
   )
 }
 
