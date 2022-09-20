@@ -1,12 +1,12 @@
-import ItemList from "../itemlist/ItemList"
 import { Text } from "@chakra-ui/react"
 import { products } from "../../utils/products"
 import { customFetch } from "../../utils/customFetch"
 import {useState, useEffect} from 'react'
+import ItemDetail from "../itemdetail/ItemDetail"
 
-const ItemListContainer = (props) => {
+const ItemDetailContainer = () => {
 
-    const [listProduct, setListProduct] = useState([])
+    const [ListProduct, setListProduct] = useState({})
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -14,22 +14,20 @@ const ItemListContainer = (props) => {
         customFetch(products)
             .then(res => {
                 setLoading(false)
-                setListProduct(res)
+                setListProduct(res.find(item => item.id === 1))
             })
     }, [])
 
+    
     return(
         <>
-            <h1>{props.greeting}</h1>
-            
             {!loading
             ?
-            <ItemList listProduct={listProduct} />
+            <ItemDetail listProduct={ListProduct} />
             :
-            <Text>Cargando...</Text>
-            }
+            <Text>Cargando...</Text>}
         </>
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

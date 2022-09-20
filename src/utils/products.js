@@ -23,7 +23,7 @@ export const products = [
     {
       "precio": 27000,
       "id": 4,
-      "category": "plcas madre",
+      "category": "placas madre",
       "title": "Placa madre",
       "image": "https://picsum.photos/id/30/600"
     },
@@ -40,5 +40,19 @@ export const products = [
       "category":"gabinetes",
       "title": "Gabinete",
       "image": "https://picsum.photos/id/50/600"
+    },
+    {
+      "precio": 5870,
+      "id": 7,
+      "category":"mouse",
+      "title": "Mouse",
+      "image": "https://picsum.photos/id/60/600"
+    },
+    {
+      "precio": 8740,
+      "id": 8,
+      "category":"teclado",
+      "title": "Teclado",
+      "image": "https://picsum.photos/id/70/600"
     }
   ]
