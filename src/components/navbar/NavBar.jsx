@@ -1,6 +1,7 @@
 import { Container, LogoContainer, Wrapper, Menu, MenuItem, MenuItemLink, IconCar } from "./NavBar.elements"
 import {FaReact} from "react-icons/fa";
 import CartWidget from "../cartwidget/CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -8,7 +9,9 @@ const NavBar = () => {
         <Container>
             <Wrapper>
                 <LogoContainer>
-                    <FaReact></FaReact>
+                    <Link to={'/'}>
+                        <FaReact></FaReact>
+                    </Link>
                 </LogoContainer>
 
                 <Menu>
@@ -32,7 +35,9 @@ const NavBar = () => {
                 </Menu>
 
                 <IconCar>
-                    <CartWidget></CartWidget>
+                    <Link to={'/cart'}>
+                        <CartWidget></CartWidget>
+                    </Link>
                 </IconCar>
             </Wrapper>
         </Container>

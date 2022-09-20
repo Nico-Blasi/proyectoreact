@@ -6,17 +6,20 @@ import ItemDetailContainer from './components/itemdetailcontainer/ItemDetailCont
 import ItemCount from './components/itemcount/ItemCount';
 import Item from './components/item/Item';
 import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {
   return (
     <>
-    <NavBar />
-    <ChakraProvider>
-      <ItemListContainer greeting="Bienvenido a mi intento de eComerce! :)" />
-      <ItemDetailContainer />
-      <ItemCount initial={1} stock={10} onAdd={() => {}} />
-      <Item />
-    </ChakraProvider>
+    <BrowserRouter>
+      <NavBar />
+      <ChakraProvider>
+        <ItemListContainer greeting="Bienvenido a mi intento de eComerce! :)" />
+        <ItemDetailContainer />
+        <ItemCount initial={1} stock={10} onAdd={() => {}} />
+        <Item />
+      </ChakraProvider>
+    </BrowserRouter>
     </>
   )
 }
