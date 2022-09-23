@@ -17,19 +17,41 @@ const NavBar = () => {
                 <Menu>
                     <MenuItem>
                         <MenuItemLink>
-                            PRODUCTOS
+                            <Link to="category/procesadores">
+                                PROCESADORES
+                            </Link>
                         </MenuItemLink>
                     </MenuItem>
 
                     <MenuItem>
                         <MenuItemLink>
-                            NOSOTROS
+                            <Link to="category/memoriasram">
+                                MEMORIAS RAM
+                            </Link>
                         </MenuItemLink>
                     </MenuItem>
 
                     <MenuItem>
                         <MenuItemLink>
-                            CONTACTANOS
+                            <Link to="category/placasmadre">
+                                PLACAS MADRES
+                            </Link>
+                        </MenuItemLink>
+                    </MenuItem>
+
+                    <MenuItem>
+                        <MenuItemLink>
+                            <Link to="category/placasdevideo">
+                                PLACAS DE VIDEO
+                            </Link>
+                        </MenuItemLink>
+                    </MenuItem>
+
+                    <MenuItem>
+                        <MenuItemLink>
+                            <Link to="category/perifericos">
+                                PERIFERICOS
+                            </Link>
                         </MenuItemLink>
                     </MenuItem>
                 </Menu>

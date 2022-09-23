@@ -1,6 +1,7 @@
 import { VStack, Button, Text, Image, Link } from "@chakra-ui/react"
+import { NavLink } from "react-router-dom"
 
-const Item = ({image, precio, title}) => {
+const Item = ({image, precio, title, id}) => {
 
     return (
          <VStack boxShadow='lg' p='6' rounded='md' bg='white' m="15px" maxWidth="275px">
@@ -8,7 +9,9 @@ const Item = ({image, precio, title}) => {
             <Text>{title}</Text>
             <Text>${precio}</Text>
             <Button colorScheme='red' size='xs'>
-                <Link>Ver Detalle</Link>
+                <NavLink to={`product/${id}`}>
+                    <Link>Ver Detalle</Link>
+                </NavLink>
             </Button>
          </VStack>
     )

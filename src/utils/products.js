@@ -9,21 +9,21 @@ export const products = [
     {
       "precio": 9000,
       "id": 2,
-      "category": "memorias ram",
+      "category": "memoriasram",
       "title": "RAM",
       "image": "https://picsum.photos/id/10/600"
     },
     {
       "precio": 120000,
       "id": 3,
-      "category":"placas de video",
+      "category":"placasdevideo",
       "title": "Placa de video",
       "image": "https://picsum.photos/id/20/600"
     },
     {
       "precio": 27000,
       "id": 4,
-      "category": "placas madre",
+      "category": "placasmadre",
       "title": "Placa madre",
       "image": "https://picsum.photos/id/30/600"
     },
@@ -44,14 +44,14 @@ export const products = [
     {
       "precio": 5870,
       "id": 7,
-      "category":"mouse",
+      "category":"perifericos",
       "title": "Mouse",
       "image": "https://picsum.photos/id/60/600"
     },
     {
       "precio": 8740,
       "id": 8,
-      "category":"teclado",
+      "category":"perifericos",
       "title": "Teclado",
       "image": "https://picsum.photos/id/70/600"
     }
