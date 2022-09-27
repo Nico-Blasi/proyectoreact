@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     width: 100%;
     height: 70px;
-    background-color: #23394d;
+    background-color: #ff8501
 `;
 
 export const Wrapper = styled.div`
@@ -22,7 +22,7 @@ export const LogoContainer = styled.div`
     align-items: center;
     font-size: 2.5rem;
     font-family: sans-serif;
-    color: #fff;
+    color: #000;
 `;
 
 export const Menu = styled.ul`
@@ -42,7 +42,7 @@ export const MenuItemLink = styled.a`
     align-items: center;
     height: 100%;
     padding: 0.5rem 2.5rem;
-    color: #fff;
+    color: #000;
     font-family: sans-serif;
     font-size: 1rem;
     font-weight: 300;
@@ -50,9 +50,8 @@ export const MenuItemLink = styled.a`
     transition: 0.5s all ease;
 
     &:hover {
-         color: #fff;
-         background-color: #e0792a;
-         transition: 0.5s all ease;
+        color: #fff;
+        transition: 0.5s all ease;
     }
 `;
 
@@ -61,5 +60,5 @@ export const IconCar = styled.div`
     align-items: center;
     font-size: 1.5rem;
     font-family: sans-serif;
-    color: #fff;
+    color: #000;
 `;

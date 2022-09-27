@@ -10,7 +10,7 @@ const Item = ({image, precio, title, id}) => {
             <Text>${precio}</Text>
             <Button colorScheme='red' size='xs'>
                 <NavLink to={`product/${id}`}>
-                    <Link>Ver Detalle</Link>
+                    <Link>Ver Mas</Link>
                 </NavLink>
             </Button>
          </VStack>

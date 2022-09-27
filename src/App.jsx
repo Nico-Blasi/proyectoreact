@@ -15,7 +15,7 @@ const App = () => {
       <NavBar />
       <ChakraProvider>
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting="Bienvenido a mi intento de eComerce! :)" /> } />
+          <Route path='/' element={<ItemListContainer /> } />
           <Route path='/category/:category' element={<ItemListContainer greeting="Bienvenido a mi intento de eComerce! :)" /> } />
           <Route path='/product/:id' element={<ItemDetailContainer />} />
         </Routes>

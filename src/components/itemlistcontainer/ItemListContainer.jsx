@@ -1,5 +1,5 @@
 import ItemList from "../itemlist/ItemList"
-import { Text } from "@chakra-ui/react"
+import { Text, Grid } from "@chakra-ui/react"
 import { products } from "../../utils/products"
 import { customFetch } from "../../utils/customFetch"
 import {useState, useEffect} from 'react'
@@ -28,11 +28,11 @@ const ItemListContainer = (props) => {
 
     return(
         <>
-            <h1>{props.greeting}</h1>
-            
             {!loading
             ?
-            <ItemList listProduct={listProduct} />
+            <Grid templateColumns='repeat(5, 1fr)' p='0 200px' gap={6}>
+                <ItemList listProduct={listProduct} />
+            </Grid>
             :
             <Text>Cargando...</Text>
             }
