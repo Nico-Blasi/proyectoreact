@@ -22,7 +22,21 @@ export const LogoContainer = styled.div`
     align-items: center;
     font-size: 2.5rem;
     font-family: sans-serif;
-    color: #000;
+    color: #fff;
+
+    &:hover {
+        animation: logoAnim 0.8s ease-out 0s 1 normal none;
+    }
+
+    @keyframes logoAnim {
+        0% {
+            transform: rotate(0);
+        }
+    
+        100% {
+            transform: rotate(180deg);
+        }
+    }
 `;
 
 export const Menu = styled.ul`
@@ -42,7 +56,7 @@ export const MenuItemLink = styled.a`
     align-items: center;
     height: 100%;
     padding: 0.5rem 2.5rem;
-    color: #000;
+    color: #fff;
     font-family: sans-serif;
     font-size: 1rem;
     font-weight: 300;
@@ -50,7 +64,7 @@ export const MenuItemLink = styled.a`
     transition: 0.5s all ease;
 
     &:hover {
-        color: #fff;
+        color: #000;
         transition: 0.5s all ease;
     }
 `;
@@ -60,5 +74,10 @@ export const IconCar = styled.div`
     align-items: center;
     font-size: 1.5rem;
     font-family: sans-serif;
-    color: #000;
+    color: #fff;
+
+    &:hover {
+        color: #000;
+        transition: 0.5s all ease;
+    }
 `;

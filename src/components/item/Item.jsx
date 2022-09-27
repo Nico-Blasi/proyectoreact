@@ -8,7 +8,7 @@ const Item = ({image, precio, title, id}) => {
             <Image src={image} alt={title} w="100px" />
             <Text>{title}</Text>
             <Text>${precio}</Text>
-            <Button colorScheme='red' size='xs'>
+            <Button colorScheme='orange' size='xs'>
                 <NavLink to={`product/${id}`}>
                     <Link>Ver Mas</Link>
                 </NavLink>
