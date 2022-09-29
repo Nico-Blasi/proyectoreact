@@ -9,7 +9,7 @@ const Item = ({image, precio, title, id}) => {
             <Text>{title}</Text>
             <Text>${precio}</Text>
             <Button colorScheme='orange' size='xs'>
-                <NavLink to={`product/${id}`}>
+                <NavLink replace to={`product/${id}`}>
                     <Link>Ver Mas</Link>
                 </NavLink>
             </Button>
