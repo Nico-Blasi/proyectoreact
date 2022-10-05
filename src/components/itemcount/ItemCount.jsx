@@ -13,7 +13,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
             <Button variant='ghost' colorScheme='orange' size='sm' onClick={decrease}>-</Button>
             <Text>{count}</Text>
             <Button variant='ghost' colorScheme='orange' size='sm' onClick={increase}>+</Button>
-            <Button colorScheme='orange' size='sm' onClick={onAdd}>Agregar al carrito</Button>
+            <Button colorScheme='orange' size='sm' onClick={() => onAdd(count)}>Agregar al carrito</Button>
         </VStack>
     )
 }

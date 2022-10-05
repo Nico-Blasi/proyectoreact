@@ -2,6 +2,7 @@ import { Button, Center, Heading, HStack, Image, Text, VStack } from "@chakra-ui
 import { NavLink } from "react-router-dom"
 import ItemCount from "../itemcount/ItemCount"
 import { useState } from "react"
+import { useCartContext } from "../../context/CartContext"
 
 const ItemDetail = ({listProduct}) => {
 
@@ -9,10 +10,13 @@ const ItemDetail = ({listProduct}) => {
 
     const [isAdded, setIsAdded] = useState(false)
 
-    const onAdd = () => {
+    const {addToCart, cartList} = useCartContext()
+
+    const onAdd = (quantity) => {
+        addToCart(listProduct, quantity)
         setIsAdded(true)
     }
-    
+    console.log(cartList)
     return(
         <Center boxShadow='lg' p='6' rounded='md' bg='white' m='20px auto'>
             <Image src={image} w='200px' />
