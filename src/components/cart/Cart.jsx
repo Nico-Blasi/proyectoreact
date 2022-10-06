@@ -1,9 +1,9 @@
-import { Center, HStack, Image, Text, VStack } from "@chakra-ui/react"
+import { Button, Center, HStack, Image, Text, VStack } from "@chakra-ui/react"
 import { useCartContext } from "../../context/CartContext"
 
 const Cart = () => {
 
-    const {cartList, totalPrice} = useCartContext()
+    const {cartList, totalPrice, removeProduct, cleanCart} = useCartContext()
     
     return(
         <Center>

@@ -8,11 +8,13 @@ import Item from './components/item/Item';
 import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './components/cart/Cart';
+import { CartContextProvider } from './context/CartContext';
 
 const App = () => {
   return (
     <>
     <BrowserRouter>
+    <CartContextProvider>
       <NavBar />
       <ChakraProvider>
         <Routes>
@@ -23,6 +25,7 @@ const App = () => {
           <Route path='/cart' element={<Cart />} />
         </Routes>
       </ChakraProvider>
+    </CartContextProvider>
     </BrowserRouter>
     </>
   )
