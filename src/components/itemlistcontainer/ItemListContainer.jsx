@@ -3,7 +3,9 @@ import { Text, Grid } from "@chakra-ui/react"
 import { products } from "../../utils/products"
 import { customFetch } from "../../utils/customFetch"
 import {useState, useEffect} from 'react'
-import { useParams } from "react-router-dom"
+import { Form, useParams } from "react-router-dom"
+import { db } from "../../firebase/firebase"
+import { getDocs, collection, query, where } from "firebase/firestore"
 
 const ItemListContainer = (props) => {
 
@@ -13,6 +15,15 @@ const ItemListContainer = (props) => {
     const {category} =useParams()
 
     useEffect(() => {
+
+        const productsCollection = collection(db, 'products')
+        getDocs(productsCollection)
+        .then((data)=>{
+            console.log(data);
+        })
+
+
+
         setLoading(true)
         customFetch(products)
             .then(res => {
