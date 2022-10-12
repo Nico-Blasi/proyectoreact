@@ -4,16 +4,16 @@ import ItemCount from "../itemcount/ItemCount"
 import { useState } from "react"
 import { useCartContext } from "../../context/CartContext"
 
-const ItemDetail = ({listProduct}) => {
+const ItemDetail = ({product}) => {
 
-    const {image, title, precio, descripcion} = listProduct
+    const {image, title, precio, descripcion} = product
 
     const [isAdded, setIsAdded] = useState(false)
 
     const {addToCart, cartList} = useCartContext()
 
     const onAdd = (quantity) => {
-        addToCart(listProduct, quantity)
+        addToCart(product, quantity)
         setIsAdded(true)
     }
     console.log(cartList)
