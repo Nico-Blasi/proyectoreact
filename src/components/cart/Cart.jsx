@@ -1,9 +1,21 @@
 import { Button, Center, HStack, Image, Text, VStack } from "@chakra-ui/react"
+import { collection } from "firebase/firestore"
 import { useCartContext } from "../../context/CartContext"
+import { db } from "../../firebase/firebase"
 
 const Cart = () => {
 
     const {cartList, totalPrice, removeProduct, cleanCart} = useCartContext()
+
+    const datosComprador = {
+        nombre: "", 
+        apellido: "",
+        email: ""
+    }
+
+    const finalizarCompra = ()=>{
+        const ventasCollection = collection(db, 'ventas')
+    }
     
     return(
         <Center>

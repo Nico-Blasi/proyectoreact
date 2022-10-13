@@ -1,42 +1,29 @@
 import ItemList from "../itemlist/ItemList"
 import { Text, Grid } from "@chakra-ui/react"
-import { products } from "../../utils/products"
-import { customFetch } from "../../utils/customFetch"
 import {useState, useEffect} from 'react'
-import { Form, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { db } from "../../firebase/firebase"
 import { getDocs, collection, query, where } from "firebase/firestore"
 
 const ItemListContainer = (props) => {
 
-    const { id } = useParams();
+    const { categoryId } = useParams();
     const [product, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const {category} =useParams()
-
     useEffect(() => {
+        setLoading(true)
 
         const productsCollection = collection(db, 'products')
-        // const procesadores = query(productsCollection, where('category', '==', 'procesadores'))
-        // const memoriasram = query(productsCollection, where('category', '==', 'memoriasram'))
-        // const placasmadre = query(productsCollection, where('category', '==', 'placasmadre'))
-        // const placasdevideo = query(productsCollection, where('category', '==', 'placasdevideo'))
-        // const perifericos = query(productsCollection, where('category', '==', 'perifericos'))
-        getDocs(productsCollection)
-        .then((data)=>{
-            const lista = data.docs.map((product)=>{
-                return{
-                    ...product.data(),
-                    id: product.id
-                }
-            })
-            setProducts(lista)
-        })
-        .finally(()=>{
-            setLoading(false);
-        })
-    }, [category])
+        if (categoryId) {
+            const queryFilter = query(productsCollection, where('category', '==', categoryId))
+            getDocs(queryFilter)
+                .then(res=>setProducts(res.docs.map(product => ({id: product.id, ...product.data()}))))
+        }else{
+            getDocs(productsCollection)
+                .then(res=>setProducts(res.docs.map(product => ({id: product.id, ...product.data()}))))
+        }
+    }, [categoryId])
 
     return(
         <>
