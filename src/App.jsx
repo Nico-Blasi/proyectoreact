@@ -19,7 +19,7 @@ const App = () => {
       <ChakraProvider>
         <Routes>
           <Route path='/' element={<ItemListContainer /> } />
-          <Route path='/category/:category' element={<ItemListContainer greeting="Bienvenido a mi intento de eComerce! :)" /> } />
+          <Route path='/category/:category' element={<ItemListContainer /> } />
           <Route path='/product/:id' element={<ItemDetailContainer />} />
           <Route path='/category/:category/product/:id' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<Cart />} />
