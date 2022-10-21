@@ -1,5 +1,5 @@
 import { Button, Center, HStack, Image, Text, VStack } from "@chakra-ui/react"
-import { collection } from "firebase/firestore"
+import { addDoc, collection } from "firebase/firestore"
 import { useCartContext } from "../../context/CartContext"
 import { db } from "../../firebase/firebase"
 
@@ -7,14 +7,20 @@ const Cart = () => {
 
     const {cartList, totalPrice, removeProduct, cleanCart} = useCartContext()
 
-    const datosComprador = {
-        nombre: "", 
-        apellido: "",
-        email: ""
+    const order = {
+        buyer: {
+            nombre: "", 
+            apellido: "",
+            email: ""
+        },
+        items: cartList.map(product => ({id: product.id, title: product.title, price: product.precio, quantity: product.quantity})),
+        total: totalPrice(),
     }
 
-    const finalizarCompra = ()=>{
-        const ventasCollection = collection(db, 'ventas')
+    const handleClick = ()=>{
+        const ordersCollection = collection(db, 'orders');
+        addDoc(ordersCollection, order)
+        .then(({id}) => console.log(id))
     }
     
     return(
@@ -33,6 +39,7 @@ const Cart = () => {
                     :
                     <>
                     <Text>Total: ${totalPrice()}</Text>
+                    <Button colorScheme='orange' size='sm' onClick={handleClick}>Finalizar compra</Button>
                     <Button colorScheme='orange' size='sm' onClick={cleanCart}>Vaciar carrito</Button>
                     </>
                 }
