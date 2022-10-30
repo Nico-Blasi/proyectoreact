@@ -2,26 +2,11 @@ import { Button, Center, HStack, Image, Text, VStack } from "@chakra-ui/react"
 import { addDoc, collection } from "firebase/firestore"
 import { useCartContext } from "../../context/CartContext"
 import { db } from "../../firebase/firebase"
+import Formulario from "../formulario/Formulario"
 
 const Cart = () => {
 
-    const {cartList, totalPrice, removeProduct, cleanCart} = useCartContext()
-
-    const order = {
-        buyer: {
-            nombre: "", 
-            apellido: "",
-            email: ""
-        },
-        items: cartList.map(product => ({id: product.id, title: product.title, price: product.precio, quantity: product.quantity})),
-        total: totalPrice(),
-    }
-
-    const handleClick = ()=>{
-        const ordersCollection = collection(db, 'orders');
-        addDoc(ordersCollection, order)
-        .then(({id}) => console.log(id))
-    }
+    const {cartList, totalPrice, removeProduct, cleanCart,} = useCartContext()
     
     return(
         <Center>
@@ -39,7 +24,7 @@ const Cart = () => {
                     :
                     <>
                     <Text>Total: ${totalPrice()}</Text>
-                    <Button colorScheme='orange' size='sm' onClick={handleClick}>Finalizar compra</Button>
+                    <Formulario />
                     <Button colorScheme='orange' size='sm' onClick={cleanCart}>Vaciar carrito</Button>
                     </>
                 }
